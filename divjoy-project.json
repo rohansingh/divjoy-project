@@ -1,0 +1,1901 @@
+{
+  "data": [
+    {
+      "type": "instance",
+      "subtype": "app-instance",
+      "componentId": "app",
+      "id": 4010090,
+      "isVisible": true,
+      "children": []
+    }
+  ],
+  "components": [
+    {
+      "id": "app",
+      "type": "component",
+      "subtype": "app-component",
+      "kit": "tailwind",
+      "children": [
+        {
+          "type": "instance",
+          "componentId": 7206975,
+          "id": 6393308,
+          "isVisible": true,
+          "attributes": "{\n\n}",
+          "children": []
+        },
+        {
+          "type": "instance",
+          "subtype": "page-instance",
+          "componentId": 5719929,
+          "id": 1184727,
+          "isVisible": true,
+          "children": []
+        },
+        {
+          "type": "instance",
+          "subtype": "page-instance",
+          "componentId": 5192901,
+          "id": 4425135,
+          "isVisible": true,
+          "children": []
+        },
+        {
+          "type": "instance",
+          "subtype": "page-instance",
+          "componentId": 8188694,
+          "id": 8536291,
+          "isVisible": true,
+          "children": []
+        },
+        {
+          "type": "instance",
+          "subtype": "page-instance",
+          "componentId": 2880604,
+          "id": 6486821,
+          "isVisible": true,
+          "children": []
+        }
+      ],
+      "isVisible": true,
+      "code": "",
+      "globalStyle": "",
+      "muiTheme": "{\n\n}"
+    },
+    {
+      "type": "component",
+      "subtype": "page-component",
+      "children": [
+        {
+          "type": "element",
+          "tagName": "section",
+          "id": 8985786,
+          "classNames": [
+            "py-12",
+            "px-4"
+          ],
+          "children": [
+            {
+              "type": "element",
+              "tagName": "div",
+              "id": 4880670,
+              "classNames": [
+                "container",
+                "mx-auto"
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "text": "This is a placeholder template, blah, blah.",
+                  "id": 4176420,
+                  "isVisible": true
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": ""
+            }
+          ],
+          "isVisible": true,
+          "attributes": "{\n\n}",
+          "image": "",
+          "name": "",
+          "classNameExpressions": [],
+          "style": ""
+        },
+        {
+          "type": "instance",
+          "componentId": 5468643,
+          "id": 133169,
+          "isVisible": true,
+          "attributes": "{\n\n}",
+          "children": []
+        }
+      ],
+      "id": 5719929,
+      "isVisible": true,
+      "code": "",
+      "path": "",
+      "description": "",
+      "requireAuth": false
+    },
+    {
+      "type": "component",
+      "id": 5468643,
+      "name": "NewsletterSection",
+      "code": "  const [subscribed, setSubscribed] = useState(false);\n  const { handleSubmit, register, errors } = useForm();\n\n  const onSubmit = ({ email }) => {\n    setSubscribed(true);\n    // Parent component can optionally\n    // find out when subscribed.\n    props.onSubscribed && props.onSubscribed();\n    // Subscribe them\n    newsletter.subscribe({ email });\n  };\n",
+      "children": [
+        {
+          "type": "element",
+          "tagName": "section",
+          "id": 5409864,
+          "classNames": [
+            "py-12",
+            "px-4",
+            "bg-gray-100"
+          ],
+          "children": [
+            {
+              "type": "element",
+              "tagName": "div",
+              "id": 1975202,
+              "classNames": [
+                "container",
+                "mx-auto",
+                "max-w-lg"
+              ],
+              "children": [
+                {
+                  "type": "element",
+                  "tagName": "h1",
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Subscribe to our newsletter",
+                      "id": 9821147,
+                      "isVisible": true
+                    }
+                  ],
+                  "id": 6313072,
+                  "classNames": [
+                    "mb-6",
+                    "text-3xl",
+                    "font-medium",
+                    "text-center"
+                  ],
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "classNameExpressions": [],
+                  "style": ""
+                },
+                {
+                  "type": "if",
+                  "js": "subscribed === false",
+                  "id": 4531555,
+                  "children": [
+                    {
+                      "type": "element",
+                      "tagName": "form",
+                      "id": 9071489,
+                      "attributes": "{\n\tonSubmit: handleSubmit(onSubmit),\n}",
+                      "children": [
+                        {
+                          "type": "if",
+                          "js": "errors.email",
+                          "id": 6469862,
+                          "children": [
+                            {
+                              "type": "element",
+                              "tagName": "p",
+                              "id": 5989712,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "text": "{errors.email.message}",
+                                  "id": 8400037,
+                                  "isVisible": true
+                                }
+                              ],
+                              "classNames": [
+                                "text-sm",
+                                "text-left",
+                                "text-red-600",
+                                "mb-1"
+                              ],
+                              "isVisible": true,
+                              "attributes": "{\n\n}",
+                              "image": "",
+                              "name": "",
+                              "classNameExpressions": [],
+                              "style": ""
+                            }
+                          ],
+                          "isVisible": true
+                        },
+                        {
+                          "type": "element",
+                          "tagName": "div",
+                          "id": 959868,
+                          "classNames": [
+                            "flex",
+                            "flex-col",
+                            "sm:flex-row"
+                          ],
+                          "children": [
+                            {
+                              "type": "element",
+                              "tagName": "input",
+                              "id": 1320594,
+                              "attributes": "{\n\tname: \"email\",\n  type: \"email\",\n  placeholder: \"Email\",\n  ref: register({\n  \trequired: \"Please enter an email address\",\n  })\n}",
+                              "classNames": [
+                                "py-1",
+                                "px-3",
+                                "w-full",
+                                "leading-8",
+                                "bg-white",
+                                "rounded",
+                                "border",
+                                "border-gray-300",
+                                "outline-none",
+                                "focus:border-blue-500",
+                                "focus:ring-1",
+                                "sm:mr-3"
+                              ],
+                              "isVisible": true,
+                              "image": "",
+                              "name": "",
+                              "classNameExpressions": [],
+                              "style": "",
+                              "children": []
+                            },
+                            {
+                              "type": "element",
+                              "tagName": "button",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "text": "Subscribe",
+                                  "id": 8361327,
+                                  "isVisible": true
+                                }
+                              ],
+                              "id": 762498,
+                              "attributes": "{\n\ttype: \"submit\",\n}",
+                              "classNames": [
+                                "py-2",
+                                "px-4",
+                                "mt-3",
+                                "text-white",
+                                "bg-blue-500",
+                                "rounded",
+                                "border-0",
+                                "sm:mt-0",
+                                "hover:bg-blue-600",
+                                "focus:outline-none"
+                              ],
+                              "isVisible": true,
+                              "image": "",
+                              "name": "",
+                              "classNameExpressions": [],
+                              "style": ""
+                            }
+                          ],
+                          "isVisible": true,
+                          "attributes": "{\n\n}",
+                          "image": "",
+                          "name": "",
+                          "classNameExpressions": [],
+                          "style": ""
+                        }
+                      ],
+                      "isVisible": true,
+                      "image": "",
+                      "name": "",
+                      "classNames": [],
+                      "classNameExpressions": [],
+                      "style": ""
+                    }
+                  ],
+                  "isVisible": true
+                },
+                {
+                  "type": "if",
+                  "js": "subscribed === true",
+                  "id": 2237734,
+                  "children": [
+                    {
+                      "type": "element",
+                      "tagName": "div",
+                      "id": 5620191,
+                      "classNames": [
+                        "text-center"
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "text": "You are now subscribed!",
+                          "id": 579014,
+                          "isVisible": true
+                        }
+                      ],
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "name": "",
+                      "classNameExpressions": [],
+                      "style": ""
+                    }
+                  ],
+                  "isVisible": true
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": ""
+            }
+          ],
+          "isVisible": true,
+          "attributes": "{\n\n}",
+          "image": "",
+          "name": "",
+          "classNameExpressions": [],
+          "style": ""
+        }
+      ],
+      "tags": [
+        "Newsletter",
+        "Popular"
+      ],
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "muiStyle": "{\n\n}"
+    },
+    {
+      "type": "component",
+      "subtype": "page-component",
+      "path": "about",
+      "id": 5192901,
+      "children": [
+        {
+          "type": "element",
+          "tagName": "section",
+          "id": 7693555,
+          "classNames": [
+            "py-12",
+            "px-4"
+          ],
+          "children": [
+            {
+              "type": "element",
+              "tagName": "div",
+              "id": 7851772,
+              "classNames": [
+                "container",
+                "mx-auto"
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum consequatur numquam aliquam tenetur ad amet inventore hic beatae, quas accusantium perferendis sapiente explicabo, corporis totam!",
+                  "id": 9379339,
+                  "isVisible": true
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": ""
+            }
+          ],
+          "isVisible": true,
+          "attributes": "{\n\n}",
+          "image": "",
+          "name": "",
+          "classNameExpressions": [],
+          "style": ""
+        },
+        {
+          "type": "instance",
+          "componentId": 9182585,
+          "id": 5016492,
+          "isVisible": true,
+          "attributes": "{\n\n}",
+          "children": []
+        }
+      ],
+      "isVisible": true,
+      "code": "",
+      "description": "",
+      "requireAuth": false
+    },
+    {
+      "type": "component",
+      "id": 9182585,
+      "name": "ContactSection",
+      "code": "  const [pending, setPending] = useState(false);\n  const [formAlert, setFormAlert] = useState(null);\n  const { handleSubmit, register, errors, reset } = useForm();\n\n  const onSubmit = (data) => {\n    // Show pending indicator\n    setPending(true);\n\n    contact.submit(data)\n    \t.then(() => {\n        // Clear form\n        reset();\n        // Show success alert message\n        setFormAlert({\n          type: \"success\",\n          message: \"Your message has been sent!\",\n        });\n      })\n      .catch((error) => {\n        // Show error alert message\n        setFormAlert({\n          type: \"error\",\n          message: error.message,\n        });\n      })\n      .finally(() => {\n        // Hide pending indicator\n        setPending(false);\n      });\n  };\n",
+      "children": [
+        {
+          "type": "element",
+          "tagName": "section",
+          "id": 2693336,
+          "classNames": [
+            "py-12",
+            "px-4",
+            "bg-gray-100"
+          ],
+          "children": [
+            {
+              "type": "element",
+              "tagName": "div",
+              "id": 2649763,
+              "classNames": [
+                "container",
+                "mx-auto",
+                "max-w-2xl"
+              ],
+              "children": [
+                {
+                  "type": "element",
+                  "tagName": "h1",
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Contact Us",
+                      "id": 5329376,
+                      "isVisible": true
+                    }
+                  ],
+                  "id": 9439487,
+                  "classNames": [
+                    "mb-6",
+                    "text-3xl",
+                    "font-medium",
+                    "text-center"
+                  ],
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "classNameExpressions": [],
+                  "style": ""
+                },
+                {
+                  "type": "if",
+                  "js": "formAlert",
+                  "id": 8447047,
+                  "children": [
+                    {
+                      "type": "element",
+                      "tagName": "div",
+                      "id": 4858731,
+                      "classNames": [
+                        "mb-4"
+                      ],
+                      "classNameExpressions": [
+                        {
+                          "js": "formAlert.type === \"error\"",
+                          "classNames": [
+                            "text-red-600"
+                          ]
+                        },
+                        {
+                          "js": "formAlert.type === \"success\"",
+                          "classNames": [
+                            "text-green-600"
+                          ]
+                        }
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "text": "{formAlert.message}",
+                          "id": 4744795,
+                          "isVisible": true
+                        }
+                      ],
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "name": "",
+                      "style": ""
+                    }
+                  ],
+                  "isVisible": true
+                },
+                {
+                  "type": "element",
+                  "tagName": "form",
+                  "id": 7202270,
+                  "attributes": "{\n\tonSubmit: handleSubmit(onSubmit),\n}",
+                  "children": [
+                    {
+                      "type": "element",
+                      "tagName": "div",
+                      "id": 2577543,
+                      "children": [
+                        {
+                          "type": "element",
+                          "tagName": "input",
+                          "id": 2220532,
+                          "attributes": "{\n\tname: \"email\",\n  type: \"email\",\n  placeholder: \"Email\",\n  ref: register({\n  \trequired: \"Please enter your email\",\n  }),\n}",
+                          "classNames": [
+                            "py-1",
+                            "px-3",
+                            "w-full",
+                            "leading-8",
+                            "bg-white",
+                            "rounded",
+                            "border",
+                            "border-gray-300",
+                            "outline-none",
+                            "focus:border-blue-500",
+                            "focus:ring-1"
+                          ],
+                          "isVisible": true,
+                          "image": "",
+                          "name": "",
+                          "classNameExpressions": [],
+                          "style": "",
+                          "children": []
+                        },
+                        {
+                          "type": "if",
+                          "js": "errors.email",
+                          "id": 2877047,
+                          "children": [
+                            {
+                              "type": "element",
+                              "tagName": "p",
+                              "id": 7475330,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "text": "{errors.email.message}",
+                                  "id": 8201558,
+                                  "isVisible": true
+                                }
+                              ],
+                              "classNames": [
+                                "mt-1",
+                                "text-sm",
+                                "text-left",
+                                "text-red-600"
+                              ],
+                              "isVisible": true,
+                              "attributes": "{\n\n}",
+                              "image": "",
+                              "name": "",
+                              "classNameExpressions": [],
+                              "style": ""
+                            }
+                          ],
+                          "isVisible": true
+                        }
+                      ],
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "name": "",
+                      "classNames": [],
+                      "classNameExpressions": [],
+                      "style": ""
+                    },
+                    {
+                      "type": "element",
+                      "tagName": "div",
+                      "id": 7806779,
+                      "classNames": [
+                        "mt-3"
+                      ],
+                      "children": [
+                        {
+                          "type": "element",
+                          "tagName": "textarea",
+                          "id": 5777464,
+                          "attributes": "{\n\tname: \"message\",\n  placeholder: \"Message\",\n  ref: register({\n  \trequired: \"Please enter a message\",\n  }),\n}",
+                          "classNames": [
+                            "py-1",
+                            "px-3",
+                            "w-full",
+                            "leading-8",
+                            "bg-white",
+                            "rounded",
+                            "border",
+                            "border-gray-300",
+                            "outline-none",
+                            "focus:border-blue-500",
+                            "focus:ring-1"
+                          ],
+                          "isVisible": true,
+                          "image": "",
+                          "name": "",
+                          "classNameExpressions": [],
+                          "style": "",
+                          "children": []
+                        },
+                        {
+                          "type": "if",
+                          "js": "errors.message",
+                          "id": 607355,
+                          "children": [
+                            {
+                              "type": "element",
+                              "tagName": "p",
+                              "id": 7915701,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "text": "{errors.message.message}",
+                                  "id": 5994058,
+                                  "isVisible": true
+                                }
+                              ],
+                              "classNames": [
+                                "mt-1",
+                                "text-sm",
+                                "text-left",
+                                "text-red-600"
+                              ],
+                              "isVisible": true,
+                              "attributes": "{\n\n}",
+                              "image": "",
+                              "name": "",
+                              "classNameExpressions": [],
+                              "style": ""
+                            }
+                          ],
+                          "isVisible": true
+                        }
+                      ],
+                      "isVisible": true,
+                      "attributes": "{\n\n}",
+                      "image": "",
+                      "name": "",
+                      "classNameExpressions": [],
+                      "style": ""
+                    },
+                    {
+                      "type": "element",
+                      "tagName": "button",
+                      "children": [
+                        {
+                          "type": "text",
+                          "text": "{pending ? \"...\" : \"Send message\"}",
+                          "id": 7774637,
+                          "isVisible": true
+                        }
+                      ],
+                      "id": 9135010,
+                      "attributes": "{\n\ttype: \"submit\",\n  disabled: pending,\n}",
+                      "classNames": [
+                        "py-2",
+                        "px-4",
+                        "mt-2",
+                        "text-white",
+                        "bg-blue-500",
+                        "rounded",
+                        "border-0",
+                        "hover:bg-blue-600",
+                        "focus:outline-none"
+                      ],
+                      "isVisible": true,
+                      "image": "",
+                      "name": "",
+                      "classNameExpressions": [],
+                      "style": ""
+                    }
+                  ],
+                  "isVisible": true,
+                  "image": "",
+                  "name": "",
+                  "classNames": [],
+                  "classNameExpressions": [],
+                  "style": ""
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": ""
+            }
+          ],
+          "isVisible": true,
+          "attributes": "{\n\n}",
+          "image": "",
+          "name": "",
+          "classNameExpressions": [],
+          "style": ""
+        }
+      ],
+      "tags": [
+        "Contact",
+        "Popular"
+      ],
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "muiStyle": "{\n\n}"
+    },
+    {
+      "type": "component",
+      "subtype": "page-component",
+      "path": "pricing",
+      "id": 8188694,
+      "children": [
+        {
+          "type": "instance",
+          "componentId": 9270495,
+          "id": 7047946,
+          "isVisible": true,
+          "attributes": "{\n\n}",
+          "children": []
+        }
+      ],
+      "isVisible": true,
+      "code": "",
+      "description": "",
+      "requireAuth": false
+    },
+    {
+      "type": "component",
+      "subtype": "page-component",
+      "path": "legal/:section",
+      "id": 2880604,
+      "children": [
+        {
+          "type": "instance",
+          "componentId": 4459896,
+          "id": 5032172,
+          "attributes": "{\n\tsection: router.query.section,\n  key: router.query.section,\n}",
+          "isVisible": true,
+          "children": []
+        }
+      ],
+      "isVisible": true,
+      "code": "",
+      "description": "",
+      "requireAuth": false
+    },
+    {
+      "type": "component",
+      "id": 4459896,
+      "name": "LegalSection",
+      "code": "  const validSections = {\n    \"terms-of-service\": true,\n    \"privacy-policy\": true,\n  };\n\n  const section = validSections[props.section]\n    ? props.section\n    : \"terms-of-service\";\n\n  const data = {\n    domain: \"company.com\",\n    companyName: \"Company\",\n  };\n",
+      "children": [
+        {
+          "type": "element",
+          "tagName": "section",
+          "id": 5903610,
+          "classNames": [
+            "py-10",
+            "px-4"
+          ],
+          "children": [
+            {
+              "type": "element",
+              "tagName": "div",
+              "id": 1397958,
+              "classNames": [
+                "flex",
+                "justify-center",
+                "space-x-5"
+              ],
+              "children": [
+                {
+                  "type": "element",
+                  "tagName": "a",
+                  "attributes": "{\n  href: \"/legal/terms-of-service\",\n}",
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Terms of Service",
+                      "id": 2735760,
+                      "isVisible": true
+                    }
+                  ],
+                  "id": 2177036,
+                  "classNameExpressions": [
+                    {
+                      "js": "section === \"terms-of-service\"",
+                      "classNames": [
+                        "underline"
+                      ]
+                    }
+                  ],
+                  "isVisible": true,
+                  "image": "",
+                  "name": "",
+                  "classNames": [],
+                  "style": ""
+                },
+                {
+                  "type": "element",
+                  "tagName": "a",
+                  "attributes": "{\n  href: \"/legal/privacy-policy\",\n}",
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Privacy Policy",
+                      "id": 7804125,
+                      "isVisible": true
+                    }
+                  ],
+                  "id": 2087974,
+                  "classNameExpressions": [
+                    {
+                      "js": "section === \"privacy-policy\"",
+                      "classNames": [
+                        "underline"
+                      ]
+                    }
+                  ],
+                  "isVisible": true,
+                  "image": "",
+                  "name": "",
+                  "classNames": [],
+                  "style": ""
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "div",
+              "id": 6802033,
+              "classNames": [
+                "container",
+                "mx-auto",
+                "mt-12"
+              ],
+              "children": [
+                {
+                  "type": "if",
+                  "js": "section === \"terms-of-service\"",
+                  "id": 415299,
+                  "children": [
+                    {
+                      "type": "instance",
+                      "componentId": 7829551,
+                      "id": 2149056,
+                      "attributes": "{\n\t...data,\n}",
+                      "isVisible": true,
+                      "children": []
+                    }
+                  ],
+                  "isVisible": true
+                },
+                {
+                  "type": "if",
+                  "js": "section === \"privacy-policy\"",
+                  "id": 9002176,
+                  "children": [
+                    {
+                      "type": "instance",
+                      "componentId": 5343409,
+                      "id": 9083811,
+                      "attributes": "{\n\t...data,\n}",
+                      "isVisible": true,
+                      "children": []
+                    }
+                  ],
+                  "isVisible": true
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": ""
+            }
+          ],
+          "isVisible": true,
+          "attributes": "{\n\n}",
+          "image": "",
+          "name": "",
+          "classNameExpressions": [],
+          "style": ""
+        }
+      ],
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "tags": [],
+      "muiStyle": "{\n\n}"
+    },
+    {
+      "type": "component",
+      "id": 7829551,
+      "name": "LegalTerms",
+      "children": [
+        {
+          "type": "element",
+          "tagName": "div",
+          "id": 1992570,
+          "classNames": [
+            "prose",
+            "prose-a:text-blue-600",
+            "max-w-none"
+          ],
+          "children": [
+            {
+              "type": "element",
+              "tagName": "h1",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Terms of Service",
+                  "id": 3669938,
+                  "isVisible": true
+                }
+              ],
+              "id": 9177523,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "p",
+              "id": 5474179,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "This document is a placeholder. You should replace this with your own Terms of Service or create one using&nbsp;\n<a href=\"https://avodocs.com\" target=\"_blank\" rel=\"noreferrer\">avodocs.com</a>,&nbsp;\n<a href=\"https://getterms.io\" target=\"_blank\" rel=\"noreferrer\">getterms.io</a> or&nbsp;\n<a href=\"https://termly.io\" target=\"_blank\" rel=\"noreferrer\">termly.io</a>. We've included some example HTML structure below to make adding your content easier ↴",
+                  "id": 3411467,
+                  "isVisible": true
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "p",
+              "id": 3835068,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "These Terms of Service govern your use of {props.domain} and any related services provided by {props.companyName}. By accessing {props.domain}, you agree to abide by these Terms of Service and to comply with all applicable laws and regulations.",
+                  "id": 9132072,
+                  "isVisible": true
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "p",
+              "id": 7687812,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "If you do not agree with these Terms of Service, you are prohibited from using or accessing {props.domain} and from using any other services we provide. We reserve the right to review and amend any of these Terms of Service at our sole discretion. Upon doing so, we will update this page. Any changes to these Terms of Service will take effect immediately from the date of publication.",
+                  "id": 2601566,
+                  "isVisible": true
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "p",
+              "id": 908605,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "This policy was last updated on October 5th, 2021.",
+                  "id": 8065565,
+                  "isVisible": true
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "h2",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Limitations of Use",
+                  "id": 753249,
+                  "isVisible": true
+                }
+              ],
+              "id": 2496738,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "p",
+              "id": 792851,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "By using {props.domain}, you warrant on behalf of yourself, your users, and other parties you represent that you will not:",
+                  "id": 1750099,
+                  "isVisible": true
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "ol",
+              "id": 9138484,
+              "children": [
+                {
+                  "type": "element",
+                  "tagName": "li",
+                  "id": 2547692,
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "modify, copy, prepare derivative works of, decompile, or reverse engineer any materials and software contained on the GetTerms.io website.",
+                      "id": 1503828,
+                      "isVisible": true
+                    }
+                  ],
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "classNames": [],
+                  "classNameExpressions": [],
+                  "style": ""
+                },
+                {
+                  "type": "element",
+                  "tagName": "li",
+                  "id": 6979595,
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "remove any copyright or other proprietary notations from any materials and software on the {props.domain} website.",
+                      "id": 9785610,
+                      "isVisible": true
+                    }
+                  ],
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "classNames": [],
+                  "classNameExpressions": [],
+                  "style": ""
+                },
+                {
+                  "type": "element",
+                  "tagName": "li",
+                  "id": 5924436,
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "etc",
+                      "id": 6032395,
+                      "isVisible": true
+                    }
+                  ],
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "classNames": [],
+                  "classNameExpressions": [],
+                  "style": ""
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "h2",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Another header",
+                  "id": 8958227,
+                  "isVisible": true
+                }
+              ],
+              "id": 8005232,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "p",
+              "id": 5301338,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Another paragraph of text",
+                  "id": 7480056,
+                  "isVisible": true
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            }
+          ],
+          "isVisible": true,
+          "attributes": "{\n\n}",
+          "image": "",
+          "name": "",
+          "classNameExpressions": [],
+          "style": ""
+        }
+      ],
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "tags": [],
+      "code": "",
+      "muiStyle": "{\n\n}"
+    },
+    {
+      "type": "component",
+      "name": "LegalPrivacy",
+      "children": [
+        {
+          "type": "element",
+          "tagName": "div",
+          "id": 2018937,
+          "classNames": [
+            "prose",
+            "prose-a:text-blue-600",
+            "max-w-none"
+          ],
+          "children": [
+            {
+              "type": "element",
+              "tagName": "h1",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Privacy Policy",
+                  "id": 4513172,
+                  "isVisible": true
+                }
+              ],
+              "id": 7848035,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "p",
+              "id": 8491402,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "This document is a placeholder. You should replace this with your own Privacy Policy or create one using&nbsp;\n<a href=\"https://avodocs.com\" target=\"_blank\" rel=\"noreferrer\">avodocs.com</a>,&nbsp;\n<a href=\"https://getterms.io\" target=\"_blank\" rel=\"noreferrer\">getterms.io</a> or&nbsp;\n<a href=\"https://termly.io\" target=\"_blank\" rel=\"noreferrer\">termly.io</a>. We've included some example HTML structure below to make adding your content easier ↴",
+                  "id": 1558685,
+                  "isVisible": true
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "p",
+              "id": 2162868,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Your privacy is important to us. It’s our policy to respect your privacy and comply with any applicable law and regulation regarding the personal information we collect about you through this website, {props.domain}, and through any associated services and third-party platforms we may use.",
+                  "id": 1506347,
+                  "isVisible": true
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "p",
+              "id": 4029145,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "This policy was last updated on October 5th, 2021.",
+                  "id": 906389,
+                  "isVisible": true
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "h2",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Information we collect",
+                  "id": 6263769,
+                  "isVisible": true
+                }
+              ],
+              "id": 6339146,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "p",
+              "id": 3915384,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Personal information is any information about you which can be used to identify you. Any information we collect may be automatically collected (i.e. information automatically sent to us by your devices when you access our services) or voluntarily provided (i.e. information you knowingly and actively provide us).",
+                  "id": 4923717,
+                  "isVisible": true
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "h3",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Automatically collected information",
+                  "id": 4011713,
+                  "isVisible": true
+                }
+              ],
+              "id": 6659664,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "p",
+              "id": 8433613,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Our servers automatically log standard data provided by your web browser when you visit our website. This data may include your device’s IP address, device type, operating system, browser type and version, the pages you visit, the time and date of your visit, time spent on each page, and other details about your visit or device.",
+                  "id": 3553028,
+                  "isVisible": true
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "h3",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Another subheader",
+                  "id": 2688626,
+                  "isVisible": true
+                }
+              ],
+              "id": 6922194,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "p",
+              "id": 221748,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Another paragraph of text",
+                  "id": 3580966,
+                  "isVisible": true
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "h2",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Another main header",
+                  "id": 6381364,
+                  "isVisible": true
+                }
+              ],
+              "id": 8654436,
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            },
+            {
+              "type": "element",
+              "tagName": "p",
+              "id": 5077136,
+              "children": [
+                {
+                  "type": "text",
+                  "text": "Another paragraph of text",
+                  "id": 196759,
+                  "isVisible": true
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNames": [],
+              "classNameExpressions": [],
+              "style": ""
+            }
+          ],
+          "isVisible": true,
+          "attributes": "{\n\n}",
+          "image": "",
+          "name": "",
+          "classNameExpressions": [],
+          "style": ""
+        }
+      ],
+      "id": 5343409,
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "tags": [],
+      "code": "",
+      "muiStyle": "{\n\n}"
+    },
+    {
+      "type": "component",
+      "name": "Navbar",
+      "children": [
+        {
+          "type": "element",
+          "tagName": "header",
+          "id": 9425988,
+          "classNames": [
+            "py-5",
+            "px-4",
+            "bg-gray-100"
+          ],
+          "children": [
+            {
+              "type": "element",
+              "tagName": "div",
+              "id": 9268186,
+              "classNames": [
+                "container",
+                "flex",
+                "flex-col",
+                "flex-wrap",
+                "items-center",
+                "mx-auto",
+                "md:flex-row"
+              ],
+              "children": [
+                {
+                  "type": "element",
+                  "tagName": "a",
+                  "attributes": "{\n  href: '/' \n}",
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Logo",
+                      "id": 8616977,
+                      "isVisible": true
+                    }
+                  ],
+                  "id": 2538550,
+                  "classNames": [
+                    "mb-3",
+                    "md:mb-0"
+                  ],
+                  "isVisible": true,
+                  "image": "",
+                  "name": "",
+                  "classNameExpressions": [],
+                  "style": ""
+                },
+                {
+                  "type": "element",
+                  "tagName": "nav",
+                  "id": 4883086,
+                  "classNames": [
+                    "flex",
+                    "flex-wrap",
+                    "items-center",
+                    "md:ml-auto"
+                  ],
+                  "children": [
+                    {
+                      "type": "element",
+                      "tagName": "a",
+                      "attributes": "{\n  href: \"/about\" \n}",
+                      "children": [
+                        {
+                          "type": "text",
+                          "text": "About",
+                          "id": 3273072,
+                          "isVisible": true
+                        }
+                      ],
+                      "id": 6520009,
+                      "classNames": [
+                        "ml-5"
+                      ],
+                      "isVisible": true,
+                      "image": "",
+                      "name": "",
+                      "classNameExpressions": [],
+                      "style": ""
+                    },
+                    {
+                      "type": "element",
+                      "tagName": "a",
+                      "attributes": "{\n  href: \"/pricing\" \n}",
+                      "children": [
+                        {
+                          "type": "text",
+                          "text": "Pricing",
+                          "id": 8427176,
+                          "isVisible": true
+                        }
+                      ],
+                      "id": 3190580,
+                      "classNames": [
+                        "ml-5"
+                      ],
+                      "isVisible": true,
+                      "image": "",
+                      "name": "",
+                      "classNameExpressions": [],
+                      "style": ""
+                    },
+                    {
+                      "type": "element",
+                      "tagName": "a",
+                      "attributes": "{\n  href: \"https://app.mysite.com/auth/signin\",\n}",
+                      "children": [
+                        {
+                          "type": "text",
+                          "text": "Sign in",
+                          "id": 8764003,
+                          "isVisible": true
+                        }
+                      ],
+                      "id": 7018103,
+                      "classNames": [
+                        "ml-5"
+                      ],
+                      "isVisible": true,
+                      "image": "",
+                      "name": "",
+                      "classNameExpressions": [],
+                      "style": ""
+                    }
+                  ],
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "classNameExpressions": [],
+                  "style": ""
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": ""
+            }
+          ],
+          "isVisible": true,
+          "attributes": "{\n\n}",
+          "image": "",
+          "name": "",
+          "classNameExpressions": [],
+          "style": ""
+        }
+      ],
+      "tags": [
+        "Navigation",
+        "Popular",
+        "not:saas"
+      ],
+      "id": 7206975,
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "code": "",
+      "muiStyle": "{\n\n}"
+    },
+    {
+      "type": "component",
+      "name": "PricingSection",
+      "code": "\tconst plans = [\n    {\n      id: \"starter\",\n      name: \"Starter\",\n      price: \"10\",\n      perks: [\n        \"Lorem ipsum dolor sit amet\",\n        \"Consectetur adipiscing elit\",\n        \"Integer molestie lorem at massa\",\n      ],\n    },\n    {\n      id: \"pro\",\n      name: \"Pro\",\n      price: \"20\",\n      perks: [\n        \"Lorem ipsum dolor sit amet\",\n        \"Consectetur adipiscing elit\",\n        \"Integer molestie lorem at massa\",\n        \"Faucibus porta lacus fringilla vel\",\n        \"Aenean sit amet erat nunc\",\n      ],\n    },\n    {\n      id: \"business\",\n      name: \"Business\",\n      price: \"50\",\n      perks: [\n        \"Lorem ipsum dolor sit amet\",\n        \"Consectetur adipiscing elit\",\n        \"Integer molestie lorem at massa\",\n        \"Faucibus porta lacus fringilla vel\",\n        \"Aenean sit amet erat nunc\",\n        \"Lorem ipsum dolor sit amet\",\n        \"Consectetur adipiscing elit\",\n      ],\n    },\n  ];\n",
+      "children": [
+        {
+          "type": "element",
+          "tagName": "section",
+          "id": 4946018,
+          "classNames": [
+            "py-12"
+          ],
+          "children": [
+            {
+              "type": "element",
+              "tagName": "div",
+              "id": 2019749,
+              "classNames": [
+                "container",
+                "mx-auto",
+                "max-w-6xl"
+              ],
+              "children": [
+                {
+                  "type": "element",
+                  "tagName": "h1",
+                  "children": [
+                    {
+                      "type": "text",
+                      "text": "Choose your plan",
+                      "id": 727100,
+                      "isVisible": true
+                    }
+                  ],
+                  "id": 5855572,
+                  "classNames": [
+                    "mb-6",
+                    "text-3xl",
+                    "font-medium",
+                    "text-center"
+                  ],
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "classNameExpressions": [],
+                  "style": ""
+                },
+                {
+                  "type": "element",
+                  "tagName": "div",
+                  "id": 1314873,
+                  "classNames": [
+                    "flex",
+                    "flex-wrap"
+                  ],
+                  "children": [
+                    {
+                      "type": "foreach",
+                      "id": 345343,
+                      "valName": "plan",
+                      "indexName": "index",
+                      "objectName": "plans",
+                      "children": [
+                        {
+                          "type": "element",
+                          "tagName": "div",
+                          "id": 664747,
+                          "attributes": "{\n\tkey: index,\n}",
+                          "classNames": [
+                            "p-4",
+                            "w-full",
+                            "md:w-1/3"
+                          ],
+                          "children": [
+                            {
+                              "type": "element",
+                              "tagName": "div",
+                              "id": 9148076,
+                              "classNames": [
+                                "flex",
+                                "flex-col",
+                                "p-5",
+                                "h-full",
+                                "rounded",
+                                "border",
+                                "border-gray-300"
+                              ],
+                              "children": [
+                                {
+                                  "type": "element",
+                                  "tagName": "div",
+                                  "id": 2237459,
+                                  "classNames": [
+                                    "text-xl"
+                                  ],
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "text": "{plan.name} (${plan.price}/mo)",
+                                      "id": 1720454,
+                                      "isVisible": true
+                                    }
+                                  ],
+                                  "isVisible": true,
+                                  "attributes": "{\n\n}",
+                                  "image": "",
+                                  "name": "",
+                                  "classNameExpressions": [],
+                                  "style": ""
+                                },
+                                {
+                                  "type": "if",
+                                  "js": "plan.perks",
+                                  "id": 9202134,
+                                  "children": [
+                                    {
+                                      "type": "element",
+                                      "tagName": "ul",
+                                      "id": 6981258,
+                                      "classNames": [
+                                        "mt-6",
+                                        "mb-6"
+                                      ],
+                                      "children": [
+                                        {
+                                          "type": "foreach",
+                                          "id": 2703447,
+                                          "valName": "perk",
+                                          "indexName": "index",
+                                          "objectName": "plan.perks",
+                                          "children": [
+                                            {
+                                              "type": "element",
+                                              "tagName": "li",
+                                              "id": 5032589,
+                                              "attributes": "{\n\tkey: index,\n}",
+                                              "classNames": [
+                                                "mb-1"
+                                              ],
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "text": "- {perk}",
+                                                  "id": 4217155,
+                                                  "isVisible": true
+                                                }
+                                              ],
+                                              "isVisible": true,
+                                              "image": "",
+                                              "name": "",
+                                              "classNameExpressions": [],
+                                              "style": ""
+                                            }
+                                          ],
+                                          "isVisible": true,
+                                          "objectType": "array"
+                                        }
+                                      ],
+                                      "isVisible": true,
+                                      "attributes": "{\n\n}",
+                                      "image": "",
+                                      "name": "",
+                                      "classNameExpressions": [],
+                                      "style": ""
+                                    }
+                                  ],
+                                  "isVisible": true
+                                },
+                                {
+                                  "type": "element",
+                                  "tagName": "a",
+                                  "attributes": "{\n  href: `https://app.mysite.com/purchase/${plan.id}`,\n}",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "text": "Choose",
+                                      "id": 6992095,
+                                      "isVisible": true
+                                    }
+                                  ],
+                                  "id": 4381432,
+                                  "classNames": [
+                                    "py-3",
+                                    "px-5",
+                                    "mt-auto",
+                                    "w-full",
+                                    "text-white",
+                                    "bg-blue-500",
+                                    "rounded",
+                                    "border-0",
+                                    "hover:bg-blue-600",
+                                    "focus:outline-none"
+                                  ],
+                                  "isVisible": true,
+                                  "image": "",
+                                  "name": "",
+                                  "classNameExpressions": [],
+                                  "style": ""
+                                }
+                              ],
+                              "isVisible": true,
+                              "attributes": "{\n\n}",
+                              "image": "",
+                              "name": "",
+                              "classNameExpressions": [],
+                              "style": ""
+                            }
+                          ],
+                          "isVisible": true,
+                          "image": "",
+                          "name": "",
+                          "classNameExpressions": [],
+                          "style": ""
+                        }
+                      ],
+                      "isVisible": true,
+                      "objectType": "array"
+                    }
+                  ],
+                  "isVisible": true,
+                  "attributes": "{\n\n}",
+                  "image": "",
+                  "name": "",
+                  "classNameExpressions": [],
+                  "style": ""
+                }
+              ],
+              "isVisible": true,
+              "attributes": "{\n\n}",
+              "image": "",
+              "name": "",
+              "classNameExpressions": [],
+              "style": ""
+            }
+          ],
+          "isVisible": true,
+          "attributes": "{\n\n}",
+          "image": "",
+          "name": "",
+          "classNameExpressions": [],
+          "style": ""
+        }
+      ],
+      "tags": [
+        "Pricing",
+        "Popular",
+        "not:saas"
+      ],
+      "id": 9270495,
+      "isVisible": true,
+      "nameLibrary": "",
+      "description": "",
+      "muiStyle": "{\n\n}"
+    }
+  ]
+}
